@@ -19,7 +19,7 @@ const Education = () => {
                         <p className="mt-2 font-semibold text-gray-900 dark:text-white">Percentage: 96.2%</p>
                     </div>
                     <div className="meta-card">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">St. Theresa’s School</h3>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">St. Therese’s School</h3>
                         <p className="text-gray-600 dark:text-gray-400">ICSE (Class X)</p>
                         <p className="text-sm text-gray-500 dark:text-gray-500">2020</p>
                         <p className="mt-2 font-semibold text-gray-900 dark:text-white">Percentage: 92.6%</p>
