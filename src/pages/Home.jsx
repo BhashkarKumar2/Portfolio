@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Projects from '../components/Projects';
@@ -7,6 +7,9 @@ import Education from '../components/Education';
 import Skills from '../components/Skills';
 import Achievements from '../components/Achievements';
 import Contact from '../components/Contact';
+
+// Lazy load ChatWidget for better initial page performance
+const ChatWidget = lazy(() => import('../components/ChatWidget'));
 
 const Home = () => {
     return (
@@ -21,6 +24,11 @@ const Home = () => {
                 <Education />
                 <Contact />
             </main>
+
+            {/* AI Chatbot Widget */}
+            <Suspense fallback={null}>
+                <ChatWidget />
+            </Suspense>
         </div>
     );
 };

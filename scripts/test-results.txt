@@ -1,0 +1,150 @@
+﻿[dotenv@17.2.3] injecting env (1) from .env -- tip: ΓÜÖ∩╕Å  enable debug logging with { debug: true }
+
+[36mΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ[0m
+[36m       CHATBOT TEST SUITE - Recruiter Questions[0m
+[36mΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ[0m
+
+[34m[1/15] Introduction[0m
+[2mQ: "Tell me about yourself"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+  [2mModel gemini-2.5-flash unavailable, trying next...[0m
+  [2mModel gemini-2.0-flash-lite unavailable, trying next...[0m
+  [2mModel gemini-2.5-pro unavailable, trying next...[0m
+[31mΓ£ù FAILED - Could not get response[0m
+
+[34m[2/15] Education[0m
+[2mQ: "What is your educational background?"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+  [2mModel gemini-2.5-flash unavailable, trying next...[0m
+  [2mModel gemini-2.0-flash-lite unavailable, trying next...[0m
+  [2mModel gemini-2.5-pro unavailable, trying next...[0m
+[31mΓ£ù FAILED - Could not get response[0m
+
+[34m[3/15] Experience[0m
+[2mQ: "Tell me about your internship experience"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+  [2mModel gemini-2.5-flash unavailable, trying next...[0m
+  [2mModel gemini-2.0-flash-lite unavailable, trying next...[0m
+  [2mModel gemini-2.5-pro unavailable, trying next...[0m
+[31mΓ£ù FAILED - Could not get response[0m
+
+[34m[4/15] Skills[0m
+[2mQ: "What programming languages do you know?"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+  [2mModel gemini-2.5-flash unavailable, trying next...[0m
+  [2mModel gemini-2.0-flash-lite unavailable, trying next...[0m
+  [2mModel gemini-2.5-pro unavailable, trying next...[0m
+[31mΓ£ù FAILED - Could not get response[0m
+
+[34m[5/15] Projects[0m
+[2mQ: "Describe your most challenging project"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+  [2mModel gemini-2.5-flash unavailable, trying next...[0m
+  [2mModel gemini-2.0-flash-lite unavailable, trying next...[0m
+  [2mModel gemini-2.5-pro unavailable, trying next...[0m
+[31mΓ£ù FAILED - Could not get response[0m
+
+[34m[6/15] Technical[0m
+[2mQ: "What is your experience with cloud technologies?"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+  [2mModel gemini-2.5-flash unavailable, trying next...[0m
+  [2mModel gemini-2.0-flash-lite unavailable, trying next...[0m
+  [2mModel gemini-2.5-pro unavailable, trying next...[0m
+[31mΓ£ù FAILED - Could not get response[0m
+
+[34m[7/15] Availability[0m
+[2mQ: "Are you available for full-time positions?"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+  [2mModel gemini-2.5-flash unavailable, trying next...[0m
+  [2mModel gemini-2.0-flash-lite unavailable, trying next...[0m
+  [2mModel gemini-2.5-pro unavailable, trying next...[0m
+[31mΓ£ù FAILED - Could not get response[0m
+
+[34m[8/15] Salary[0m
+[2mQ: "What are your salary expectations?"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+  [2mModel gemini-2.5-flash unavailable, trying next...[0m
+  [2mModel gemini-2.0-flash-lite unavailable, trying next...[0m
+  [2mModel gemini-2.5-pro unavailable, trying next...[0m
+[31mΓ£ù FAILED - Could not get response[0m
+
+[34m[9/15] Value Proposition[0m
+[2mQ: "Why should we hire you?"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+[33mΓÜá Score: 0% (0/4 keywords)[0m
+[2mModel: gemini-2.5-flash[0m
+[2mA: "That's an excellent question! You should hire me because I bring a strong foundation..."[0m
+[33mMissing: experience, skills, passionate, learn[0m
+
+[34m[10/15] Technical[0m
+[2mQ: "What's your experience with databases?"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+[32mΓ£ô Score: 100% (3/3 keywords)[0m
+[2mModel: gemini-2.5-flash[0m
+[2mA: "That's a great question! I've worked with both relational and NoSQL databases in my projects and studies.
+
+Specifically, I have experience with **Mong..."[0m
+
+[34m[11/15] Achievements[0m
+[2mQ: "Tell me about your competitive programming experience"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+[32mΓ£ô Score: 100% (4/4 keywords)[0m
+[2mModel: gemini-2.5-flash[0m
+[2mA: "I'm glad you asked! Competitive programming is something I'm really passionate about. I've actively engaged with platforms like LeetCode, where I've s..."[0m
+
+[34m[12/15] Soft Skills[0m
+[2mQ: "Can you work in a team environment?"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+[32mΓ£ô Score: 75% (3/4 keywords)[0m
+[2mModel: gemini-2.5-flash[0m
+[2mA: "Absolutely! I thrive in collaborative environments. During my internship at Expedia Group, I regularly worked with Data Engineering and Frontend teams..."[0m
+[33mMissing: collaborate[0m
+
+[34m[13/15] Contact[0m
+[2mQ: "What is your GitHub profile?"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+[32mΓ£ô Score: 100% (2/2 keywords)[0m
+[2mModel: gemini-2.5-flash[0m
+[2mA: "Hello there! Thanks for asking. You can find my GitHub profile at [github.com/BhashkarKumar2](https://github.com/BhashkarKumar2).
+
+Feel free to explor..."[0m
+
+[34m[14/15] Skills[0m
+[2mQ: "What frameworks are you proficient in?"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+[32mΓ£ô Score: 100% (4/4 keywords)[0m
+[2mModel: gemini-2.5-flash[0m
+[2mA: "That's a great question! I'm quite proficient with a range of frameworks. On the web development side, I'm comfortable with React.js, Express.js, Node..."[0m
+
+[34m[15/15] Technical[0m
+[2mQ: "Do you have experience with real-time applications?"[0m
+  [2mModel gemini-2.0-flash unavailable, trying next...[0m
+  [2mModel gemini-2.5-flash unavailable, trying next...[0m
+  [2mModel gemini-2.0-flash-lite unavailable, trying next...[0m
+  [2mModel gemini-2.5-pro unavailable, trying next...[0m
+[31mΓ£ù FAILED - Could not get response[0m
+
+[36mΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ[0m
+[36m                        SUMMARY[0m
+[36mΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ[0m
+Total Tests: 15
+Passed: [32m5[0m
+Failed: [31m10[0m
+Average Score: [31m31.7%[0m
+
+[36mRECOMMENDATIONS:[0m
+
+Consider improving context for these areas:
+  - Introduction: Add more details about this topic
+  - Education: Add more details about this topic
+  - Experience: Add more details about this topic
+  - Skills: Add more details about this topic
+  - Projects: Add more details about this topic
+  - Technical: Add more details about this topic
+  - Availability: Add more details about this topic
+  - Salary: Add more details about this topic
+  - Value Proposition: Add more details about this topic
+  - Technical: Add more details about this topic
+
+[2mTest completed at 3:24:55 am[0m
+
