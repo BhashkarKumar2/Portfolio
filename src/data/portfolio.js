@@ -9,7 +9,7 @@ export const portfolioData = {
         status: "Available for Work",
         linkedin: "https://www.linkedin.com/in/bhashkar-kumar-351a77257/",
         connections: "500+ Connections",
-        bio: "Passionate SDE Intern former **Expedia Group**. Expert in building scalable web applications with **React, Spring Boot, and AWS**. Top-rated competitive programmer (LeetCode 600+, Codeforces 1200+).",
+        bio: "Passionate former SDE Intern at **Expedia Group**. Expert in building scalable web applications with **React, Spring Boot, and AWS**. Top-rated competitive programmer (LeetCode 600+, Codeforces 1200+).",
         resumeLink: "/resume.pdf",
         contactLink: "#contact"
     },
