@@ -12,7 +12,7 @@ const Projects = () => {
         },
         {
             title: 'JustUs',
-            description: 'Real-time 1:1 chat application with media sharing and optimistic UI updates. Achieved <1s latency and 99% delivery success.',
+            description: 'Real-time chat application with media sharing and optimistic UI updates. Achieved <1s latency and 99% delivery success.',
             tech: ['React', 'Spring Boot', 'WebSocket', 'Redis'],
             links: { demo: 'https://just-us-liard.vercel.app/', github: 'https://github.com/BhashkarKumar2/JustUs' },
             image: "/projects/justus.png"

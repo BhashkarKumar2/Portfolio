@@ -75,7 +75,7 @@ const Hero = () => {
                     className="mt-10 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-700/50"
                 >
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
-                        Passionate SDE Intern ex-<strong>Expedia Group</strong>. Expert in building scalable web applications with
+                        Passionate SDE Intern former <strong>Expedia Group</strong>. Expert in building scalable web applications with
                         <span className="font-semibold text-gray-900 dark:text-white"> React, Spring Boot, and AWS</span>.
                         Top-rated competitive programmer (LeetCode 600+, Codeforces 1200+).
                     </p>
