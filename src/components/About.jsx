@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Code, MapPin, Globe, Cpu } from 'lucide-react';
+import { Code, MapPin, Cpu } from 'lucide-react';
+import { portfolioData } from '../data/portfolio';
 
 const BentoGridItem = ({ children, className = "", delay = 0 }) => {
     const ref = useRef(null);
@@ -26,6 +27,8 @@ const BentoGridItem = ({ children, className = "", delay = 0 }) => {
 };
 
 const About = () => {
+    const { about } = portfolioData;
+
     return (
         <section id="about" className="py-20 relative">
             <div className="container mx-auto">
@@ -46,10 +49,14 @@ const About = () => {
                                 <Code className="text-blue-400" /> The Code Journey
                             </h3>
                             <p className="text-gray-400 mb-6 leading-relaxed text-lg">
-                                My journey began in 2020 with custom Tumblr themes, leading me down the rabbit hole of full-stack development. Today, I build enterprise-grade software for <span className="text-white font-medium">startups, agencies, and large corporations</span>.
+                                {about.mission.split('**').map((part, index) =>
+                                    index % 2 === 1 ? <span key={index} className="text-white font-medium">{part}</span> : part
+                                )}
                             </p>
                             <p className="text-gray-400 leading-relaxed text-lg">
-                                I currently drive engineering efforts at <span className="text-blue-400 font-bold">Expedia Group</span>, focusing on accessible and inclusive digital products.
+                                {about.currentRole.split('**').map((part, index) =>
+                                    index % 2 === 1 ? <span key={index} className="text-blue-400 font-bold">{part}</span> : part
+                                )}
                             </p>
                         </div>
                     </BentoGridItem>
@@ -62,7 +69,7 @@ const About = () => {
                             </div>
                             <div>
                                 <h4 className="text-xl font-bold text-white">Based in</h4>
-                                <p className="text-gray-400">Bengaluru, India</p>
+                                <p className="text-gray-400">{about.location}</p>
                             </div>
                         </div>
                     </BentoGridItem>
@@ -78,7 +85,7 @@ const About = () => {
                             </div>
                             <div>
                                 <h4 className="text-xl font-bold text-white">Status</h4>
-                                <p className="text-green-400">Open to Work</p>
+                                <p className="text-green-400">{about.status}</p>
                             </div>
                         </div>
                     </BentoGridItem>
@@ -89,7 +96,7 @@ const About = () => {
                             <Cpu className="text-purple-400" /> Tech Arsenal
                         </h3>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {['Java', 'Spring Boot', 'React.js', 'AWS', 'Docker', 'PostgreSQL', 'Redis', 'Kafka'].map((tech) => (
+                            {about.techStack.map((tech) => (
                                 <div key={tech} className="bg-white/5 border border-white/5 rounded-lg p-3 text-center hover:bg-white/10 hover:border-white/20 transition-all cursor-default">
                                     <span className="text-gray-300 font-medium">{tech}</span>
                                 </div>
