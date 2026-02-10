@@ -1,12 +1,8 @@
 import React from 'react';
+import { portfolioData } from '../data/portfolio';
 
 const Skills = () => {
-    const skills = {
-        "Languages": ["C++", "Python", "JavaScript", "Java"],
-        "Frameworks": ["React.js", "Express.js", "Node.js", "Spring Boot", "NumPy", "Pandas", "PyTorch"],
-        "Tools": ["Git", "GitHub", "AWS", "Google Colab", "MongoDB", "SQL", "VS Code", "IntelliJ"],
-        "Core": ["Data Structures & Algorithms", "OOP", "DBMS", "OS", "Deep Learning", "Machine Learning"]
-    };
+    const { skills } = portfolioData;
 
     return (
         <section id="skills" className="py-20 bg-background dark:bg-gray-900 transition-colors duration-300">

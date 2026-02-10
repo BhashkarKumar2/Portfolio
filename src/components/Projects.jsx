@@ -1,30 +1,9 @@
 import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
+import { portfolioData } from '../data/portfolio';
 
 const Projects = () => {
-    const projects = [
-        {
-            title: 'ChefHub',
-            description: 'AI-powered chef booking platform with personalized recommendations. Increased booking precision by 30% and handled 2,000+ searches/month.',
-            tech: ['React', 'MongoDB', 'Express', 'Node.js'],
-            links: { demo: 'https://chefhub-poou.vercel.app/', github: 'https://github.com/BhashkarKumar2/Chefhub' },
-            image: "/projects/chefhub.png"
-        },
-        {
-            title: 'JustUs',
-            description: 'Real-time chat application with media sharing and optimistic UI updates. Achieved <1s latency and 99% delivery success.',
-            tech: ['React', 'Spring Boot', 'WebSocket', 'Redis'],
-            links: { demo: 'https://just-us-liard.vercel.app/', github: 'https://github.com/BhashkarKumar2/JustUs' },
-            image: "/projects/justus.png"
-        },
-        {
-            title: 'Image Classifier',
-            description: 'Deep Learning model classifying handwritten digits (MNIST) and Dog/Cat images with 95%+ accuracy using Hybrid FCN + CNN.',
-            tech: ['Python', 'PyTorch', 'Deep Learning'],
-            links: { demo: '/image-classifier', github: 'https://github.com/BhashkarKumar2/image-classifier' },
-            image: "/projects/classifier.png"
-        }
-    ];
+    const { projects } = portfolioData;
 
     return (
         <section id="projects" className="py-20 bg-background dark:bg-gray-900 transition-colors duration-300">
@@ -65,7 +44,7 @@ const Projects = () => {
 
                                 <div className="flex justify-between items-center pt-4 border-t border-gray-100 dark:border-gray-700">
                                     <div className="flex gap-4">
-                                        <a href={project.links.github} className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white flex items-center gap-1 text-sm font-medium transition-colors">
+                                        <a href={project.links.github} target="_blank" rel="noreferrer" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white flex items-center gap-1 text-sm font-medium transition-colors">
                                             <Github size={18} />
                                             <span>Code</span>
                                         </a>

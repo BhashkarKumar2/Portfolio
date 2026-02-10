@@ -71,7 +71,7 @@ const LevelNode = ({
             <div
                 className={`
                     absolute top-1/2 -translate-y-1/2 z-30 
-                    w-[300px] md:w-[400px]
+                    w-[90vw] sm:w-[300px] md:w-[400px]
                     transition-all duration-300
                     pointer-events-none 
                     ${isLeft ? 'right-[60%] md:right-[65%] text-right' : 'left-[60%] md:left-[65%] text-left'}
