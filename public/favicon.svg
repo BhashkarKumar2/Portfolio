@@ -1,13 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#6366f1"/>
       <stop offset="1" stop-color="#7c3aed"/>
     </linearGradient>
+    <clipPath id="sq"><rect width="1024" height="1024" rx="246"/></clipPath>
   </defs>
-  <rect width="64" height="64" rx="15" fill="url(#g)"/>
-  <rect width="64" height="32" rx="15" fill="#ffffff" opacity="0.10"/>
-  <text x="32" y="34" text-anchor="middle" dominant-baseline="central"
-        font-family="Segoe UI, Inter, Arial, sans-serif" font-size="29" font-weight="700"
-        fill="#ffffff">BK</text>
+  <g clip-path="url(#sq)">
+    <rect width="1024" height="1024" fill="url(#g)"/>
+    <rect width="1024" height="512" fill="#ffffff" opacity="0.09"/>
+  </g>
+  <!-- B: stem + two bowls (stroked half-circles) -->
+  <rect x="296" y="312" width="62" height="400" rx="31" fill="#ffffff"/>
+  <g fill="none" stroke="#ffffff" stroke-width="62" stroke-linecap="round">
+    <path d="M 327 343 A 89 89 0 0 1 327 521"/>
+    <path d="M 327 503 A 89 89 0 0 1 327 681"/>
+  </g>
+  <!-- K: stem + two arms -->
+  <rect x="604" y="312" width="62" height="400" rx="31" fill="#ffffff"/>
+  <g fill="none" stroke="#ffffff" stroke-width="62" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 660 512 L 814 312"/>
+    <path d="M 660 512 L 814 712"/>
+  </g>
 </svg>
