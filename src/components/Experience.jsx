@@ -36,6 +36,19 @@ const Experience = () => {
                 ))}
               </ul>
 
+              {job.tech && (
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {job.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="glass-chip rounded-full px-3 py-1 font-mono text-xs text-ink-soft"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
+
               {job.certificate && (
                 <a
                   href={job.certificate}

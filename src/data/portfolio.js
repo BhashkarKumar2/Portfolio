@@ -35,23 +35,21 @@ export const experience = [
       "Followed agile practices and contributed to code reviews that reduced post-deployment bugs by 30%, ensuring consistent software quality.",
     ],
   },
-];
-
-export const projects = [
   {
-    title: "Agentic Ticket Resolution System",
-    blurb:
-      "A modular agent runtime for enterprise ticket resolution with request-isolated execution and a self-repairing inference pipeline.",
+    company: "IndiaMART",
+    role: "Agentic Ticket Resolution System",
+    period: "Jan 2026 – Jun 2026",
+    location: "Noida, India",
     tech: ["Python", "FastAPI", "LangGraph", "LangChain", "DeepSeek"],
-    image: null,
     points: [
       "Architected a modular agent runtime separating orchestration, domain skills, tool semantics, and safety policies, with progressive context loading across 23 enterprise tools.",
       "Built request-isolated execution using LangGraph memory, virtual filesystems, middleware-managed scratchpads, scoped caches, failure logs, and lifecycle cleanup.",
       "Designed a two-stage inference pipeline: unconstrained tool-driven reasoning followed by function-calling schema repair, deterministic validation, and failure recovery.",
     ],
-    links: {},
-    featured: true,
   },
+];
+
+export const projects = [
   {
     title: "ChefHub",
     blurb:
