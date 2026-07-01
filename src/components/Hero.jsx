@@ -23,7 +23,7 @@ const item = {
 const Hero = () => {
   return (
     <section id="top" className="relative">
-      <div className="mx-auto grid min-h-screen w-full max-w-content items-center gap-12 px-6 pb-16 pt-32 lg:grid-cols-[1.45fr_1fr]">
+      <div className="mx-auto flex min-h-screen w-full max-w-content flex-col justify-center px-6 pb-16 pt-32">
         {/* Text column */}
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.div
@@ -90,26 +90,6 @@ const Hero = () => {
               ))}
             </div>
           </motion.div>
-        </motion.div>
-
-        {/* Photo column */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-          className="order-first flex justify-center lg:order-none"
-        >
-          <div className="relative aspect-square w-52 sm:w-60 lg:w-72">
-            <img
-              src="/profile.jpeg"
-              alt="Bhashkar Kumar"
-              className="h-full w-full rounded-full object-cover object-[center_20%] shadow-xl ring-1 ring-ink/10"
-            />
-            {/* availability dot */}
-            <span className="absolute bottom-4 right-4 flex h-5 w-5 items-center justify-center rounded-full bg-white shadow dark:bg-[rgb(var(--bg))]">
-              <span className="h-3 w-3 rounded-full bg-emerald-500" />
-            </span>
-          </div>
         </motion.div>
       </div>
     </section>
