@@ -1,4 +1,3 @@
-import Backdrop from './components/Backdrop';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
@@ -13,7 +12,6 @@ import Contact from './components/Contact';
 function App() {
   return (
     <div className="relative min-h-screen text-ink antialiased">
-      <Backdrop />
       <Navbar />
       <main>
         <Hero />

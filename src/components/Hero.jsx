@@ -97,17 +97,18 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-          className="order-first mx-auto w-full max-w-[300px] lg:order-none lg:max-w-[360px]"
+          className="order-first flex justify-center lg:order-none"
         >
-          <div className="glass relative rounded-[2rem] p-3">
+          <div className="relative aspect-square w-52 sm:w-60 lg:w-72">
             <img
               src="/profile.jpeg"
               alt="Bhashkar Kumar"
-              className="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
+              className="h-full w-full rounded-full object-cover object-[center_20%] shadow-xl ring-1 ring-ink/10"
             />
-            <div className="glass-chip absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-4 py-1.5 text-xs font-medium text-ink">
-              DTU · CE '26
-            </div>
+            {/* availability dot */}
+            <span className="absolute bottom-4 right-4 flex h-5 w-5 items-center justify-center rounded-full bg-white shadow dark:bg-[rgb(var(--bg))]">
+              <span className="h-3 w-3 rounded-full bg-emerald-500" />
+            </span>
           </div>
         </motion.div>
       </div>

@@ -7,18 +7,18 @@
 /* ---- Theme tokens (space-separated RGB channels for Tailwind alpha) ---- */
 :root {
   color-scheme: light;
-  --bg: 238 241 251;        /* page background */
+  --bg: 246 247 250;        /* clean off-white page background */
   --ink: 10 10 10;          /* primary text */
-  --ink-soft: 64 64 64;
-  --ink-faint: 115 115 115;
+  --ink-soft: 71 74 84;
+  --ink-faint: 122 126 138;
   --accent: 79 70 229;      /* indigo-600 */
 
   --glass-rgb: 255 255 255;
-  --glass-a: 0.45;
-  --glass-hover-a: 0.6;
-  --chip-a: 0.65;
-  --border-rgb: 255 255 255;
-  --border-a: 0.5;
+  --glass-a: 0.72;          /* crisp white cards on the minimal bg */
+  --glass-hover-a: 0.9;
+  --chip-a: 0.85;
+  --border-rgb: 15 23 42;   /* subtle dark hairline border */
+  --border-a: 0.08;
 
   --solid-bg: 10 10 10;     /* solid buttons */
   --solid-ink: 255 255 255;
@@ -26,18 +26,18 @@
 
 html.dark {
   color-scheme: dark;
-  --bg: 9 11 20;
+  --bg: 12 14 20;           /* deep, near-solid charcoal */
   --ink: 236 237 243;
   --ink-soft: 176 182 199;
   --ink-faint: 128 134 152;
   --accent: 129 140 248;    /* indigo-400 (lighter for dark) */
 
   --glass-rgb: 255 255 255;
-  --glass-a: 0.06;
-  --glass-hover-a: 0.11;
-  --chip-a: 0.09;
+  --glass-a: 0.05;
+  --glass-hover-a: 0.09;
+  --chip-a: 0.07;
   --border-rgb: 255 255 255;
-  --border-a: 0.12;
+  --border-a: 0.10;
 
   --solid-bg: 236 237 243;
   --solid-ink: 12 14 20;
@@ -94,9 +94,9 @@ body {
   .glass {
     background: rgb(var(--glass-rgb) / var(--glass-a));
     border: 1px solid rgb(var(--border-rgb) / var(--border-a));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 24px rgba(2, 6, 23, 0.05);
   }
 
   .glass-hover {
