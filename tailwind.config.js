@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -11,14 +12,15 @@ export default {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       colors: {
+        // Driven by CSS variables so a single `.dark` class flips the whole theme.
         ink: {
-          DEFAULT: '#0a0a0a',
-          soft: '#404040',
-          faint: '#737373',
+          DEFAULT: 'rgb(var(--ink) / <alpha-value>)',
+          soft: 'rgb(var(--ink-soft) / <alpha-value>)',
+          faint: 'rgb(var(--ink-faint) / <alpha-value>)',
         },
         accent: {
-          DEFAULT: '#4f46e5',
-          soft: '#eef2ff',
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          soft: 'rgb(var(--accent) / 0.12)',
         },
       },
       maxWidth: {

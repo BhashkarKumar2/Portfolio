@@ -10,7 +10,25 @@
     <meta property="og:description" content="Full-Stack Developer building scalable web apps and agentic AI systems." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bhashkar.vercel.app" />
+    <meta property="og:image" content="https://bhashkar.vercel.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bhashkar Kumar — Software Engineer" />
+    <meta name="twitter:description" content="Full-Stack Developer building scalable web apps and agentic AI systems." />
+    <meta name="twitter:image" content="https://bhashkar.vercel.app/og.png" />
+    <meta name="theme-color" content="#eef1fb" />
     <title>Bhashkar Kumar — Software Engineer</title>
+    <script>
+      // Set theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -28,7 +28,7 @@ const Contact = () => {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a
               href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
+              className="btn-solid inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
             >
               <Mail size={16} /> {profile.email}
             </a>

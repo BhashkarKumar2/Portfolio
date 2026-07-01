@@ -21,6 +21,13 @@ export const profile = {
   },
 };
 
+export const stats = [
+  { value: 8.02, decimals: 2, label: "CGPA · DTU" },
+  { value: 1892, label: "LeetCode (Knight)" },
+  { value: 1200, suffix: "+", label: "Codeforces rating" },
+  { value: 40, suffix: "%", label: "Faster data retrieval @ Expedia" },
+];
+
 export const experience = [
   {
     company: "Expedia Group",

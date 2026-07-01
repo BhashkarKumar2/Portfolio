@@ -28,7 +28,7 @@ const About = () => {
               <div
                 key={h.k}
                 className={`flex items-baseline justify-between gap-4 py-3 ${
-                  i !== highlights.length - 1 ? 'border-b border-white/40' : ''
+                  i !== highlights.length - 1 ? 'border-b border-ink/10' : ''
                 }`}
               >
                 <dt className="font-mono text-xs uppercase tracking-widest text-ink-faint">

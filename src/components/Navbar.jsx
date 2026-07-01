@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const links = [
   { label: 'About', href: '#about' },
@@ -41,23 +42,27 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <ThemeToggle />
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
+            className="btn-solid rounded-full px-4 py-1.5 text-sm font-medium"
           >
             Résumé
           </a>
         </div>
 
-        <button
-          className="text-ink md:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            className="text-ink"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
 
       {open && (
@@ -77,7 +82,7 @@ const Navbar = () => {
               href="/resume.pdf"
               target="_blank"
               rel="noreferrer"
-              className="mt-2 w-fit rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-white"
+              className="btn-solid mt-2 w-fit rounded-full px-4 py-1.5 text-sm font-medium"
             >
               Résumé
             </a>

@@ -23,7 +23,8 @@ const item = {
 const Hero = () => {
   return (
     <section id="top" className="relative">
-      <div className="mx-auto flex min-h-screen w-full max-w-content flex-col justify-center px-6 pb-16 pt-32">
+      <div className="mx-auto grid min-h-screen w-full max-w-content items-center gap-12 px-6 pb-16 pt-32 lg:grid-cols-[1.45fr_1fr]">
+        {/* Text column */}
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.div
             variants={item}
@@ -38,7 +39,7 @@ const Hero = () => {
 
           <motion.h1
             variants={item}
-            className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl"
+            className="text-4xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl"
           >
             {profile.name}
           </motion.h1>
@@ -48,17 +49,14 @@ const Hero = () => {
             <span className="text-ink">{profile.tagline}</span>
           </motion.p>
 
-          <motion.p
-            variants={item}
-            className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft"
-          >
+          <motion.p variants={item} className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft">
             {profile.intro}
           </motion.p>
 
           <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
+              className="btn-solid inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
             >
               View my work <ArrowDown size={16} />
             </a>
@@ -92,6 +90,25 @@ const Hero = () => {
               ))}
             </div>
           </motion.div>
+        </motion.div>
+
+        {/* Photo column */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+          className="order-first mx-auto w-full max-w-[300px] lg:order-none lg:max-w-[360px]"
+        >
+          <div className="glass relative rounded-[2rem] p-3">
+            <img
+              src="/profile.jpeg"
+              alt="Bhashkar Kumar"
+              className="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
+            />
+            <div className="glass-chip absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-4 py-1.5 text-xs font-medium text-ink">
+              DTU · CE '26
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
