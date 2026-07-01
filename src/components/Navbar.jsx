@@ -28,7 +28,8 @@ const Navbar = () => {
           scrolled ? 'glass shadow-lg' : 'border border-transparent'
         }`}
       >
-        <a href="#top" className="font-mono text-sm font-semibold tracking-tight text-ink">
+        <a href="#top" className="flex items-center gap-2 font-mono text-sm font-semibold tracking-tight text-ink">
+          <img src="/favicon.svg" alt="BK logo" className="h-6 w-6 rounded-md" />
           bhashkar<span className="text-accent">.</span>
         </a>
 
