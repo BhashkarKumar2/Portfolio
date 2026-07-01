@@ -42,12 +42,6 @@ body {
   background: rgba(90, 90, 120, 0.6);
 }
 
-@keyframes drift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(4%, -6%) scale(1.08); }
-  66% { transform: translate(-5%, 4%) scale(0.96); }
-}
-
 @layer components {
   .section {
     @apply mx-auto w-full max-w-content px-6 py-20 sm:py-24;
@@ -61,17 +55,32 @@ body {
     @apply text-3xl font-semibold tracking-tight text-ink sm:text-4xl;
   }
 
-  /* Frosted glass surface */
+  /* Frosted glass surface — real backdrop blur, used only on large cards + navbar.
+     backdrop-blur-md (not xl) keeps the frost while cutting compositing cost. */
   .glass {
-    @apply border border-white/50 bg-white/40 backdrop-blur-xl;
+    @apply border border-white/50 bg-white/45 backdrop-blur-md;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
   }
 
   .glass-hover {
-    @apply transition-all duration-300 hover:bg-white/55 hover:border-white/70;
+    @apply transition-colors duration-300 hover:bg-white/60 hover:border-white/70;
   }
 
+  /* Small pills/chips: translucent tint WITHOUT backdrop-filter. There are dozens
+     of these on screen (skill tags, tech pills, social buttons); blurring each one
+     is imperceptible but very expensive, so we fake the glass with opacity + border. */
   .glass-chip {
-    @apply border border-white/50 bg-white/45 backdrop-blur-md;
+    @apply border border-white/60 bg-white/65;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
   }
 }
