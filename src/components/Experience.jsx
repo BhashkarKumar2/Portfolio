@@ -1,39 +1,57 @@
-import React from 'react';
-import { portfolioData } from '../data/portfolio';
+import { ArrowUpRight, MapPin } from 'lucide-react';
+import Reveal from './Reveal';
+import { experience } from '../data/portfolio';
 
 const Experience = () => {
-    const { experience } = portfolioData;
+  return (
+    <section id="experience" className="section">
+      <Reveal>
+        <p className="eyebrow">02 — Experience</p>
+        <h2 className="heading">Where I've worked</h2>
+      </Reveal>
 
-    return (
-        <section id="experience" className="py-20 bg-background dark:bg-gray-900 transition-colors duration-300">
-            <div className="max-w-4xl mx-auto px-6 sm:px-8">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Experience</h2>
-                <div className="space-y-8">
-                    {experience.map((job, index) => (
-                        <div key={index} className="meta-card">
-                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                                <div>
-                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">{job.company}</h3>
-                                    <p className="text-gray-600 dark:text-gray-400">{job.role}</p>
-                                </div>
-                                {job.certificate && (
-                                    <a href={job.certificate} target="_blank" rel="noreferrer" className="text-primary-600 dark:text-primary-400 text-sm hover:underline mt-1 sm:mt-0">
-                                        View Certificate
-                                    </a>
-                                )}
-                            </div>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">{job.period}</p>
-                            <ul className="list-disc list-inside mt-4 text-gray-700 dark:text-gray-300 space-y-2">
-                                {job.description.map((point, i) => (
-                                    <li key={i}>{point}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+      <div className="mt-10 space-y-6">
+        {experience.map((job, i) => (
+          <Reveal key={job.company} delay={i * 0.06}>
+            <article className="glass glass-hover rounded-2xl p-6 sm:p-8">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-xl font-semibold text-ink">{job.role}</h3>
+                  <p className="mt-1 text-base font-medium text-accent">{job.company}</p>
                 </div>
-            </div>
-        </section>
-    );
+                <div className="text-right text-sm text-ink-faint">
+                  <p className="font-mono">{job.period}</p>
+                  <p className="mt-1 inline-flex items-center gap-1">
+                    <MapPin size={13} /> {job.location}
+                  </p>
+                </div>
+              </div>
+
+              <ul className="mt-5 space-y-3">
+                {job.points.map((p, idx) => (
+                  <li key={idx} className="flex gap-3 text-sm leading-relaxed text-ink-soft">
+                    <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-accent/70" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+
+              {job.certificate && (
+                <a
+                  href={job.certificate}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-ink transition-colors hover:text-accent"
+                >
+                  View certificate <ArrowUpRight size={15} />
+                </a>
+              )}
+            </article>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Experience;

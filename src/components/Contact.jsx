@@ -1,42 +1,75 @@
-import React from 'react';
-import { Mail, Linkedin, Github, Code } from 'lucide-react';
+import { Mail, Phone, ArrowUpRight } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { SiLeetcode, SiCodeforces } from 'react-icons/si';
+import Reveal from './Reveal';
+import { profile } from '../data/portfolio';
+
+const socials = [
+  { icon: FaGithub, href: profile.socials.github, label: 'GitHub' },
+  { icon: FaLinkedin, href: profile.socials.linkedin, label: 'LinkedIn' },
+  { icon: SiLeetcode, href: profile.socials.leetcode, label: 'LeetCode' },
+  { icon: SiCodeforces, href: profile.socials.codeforces, label: 'Codeforces' },
+];
 
 const Contact = () => {
-    return (
-        <section id="contact" className="py-20 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
-            <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Get In Touch</h2>
-                <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto">
-                    I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-                </p>
+  return (
+    <footer id="contact" className="section pb-12">
+      <Reveal>
+        <div className="glass overflow-hidden rounded-3xl p-8 text-center sm:p-14">
+          <p className="eyebrow justify-center">07 — Contact</p>
+          <h2 className="mx-auto max-w-xl text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+            Let's build something together.
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-base text-ink-soft">
+            I'm open to internships, full-time roles, and interesting collaborations. The fastest
+            way to reach me is email.
+          </p>
 
-                <div className="flex flex-wrap justify-center gap-6 mb-10">
-                    <a href="mailto:bhashkarkumar2063@gmail.com" className="flex flex-col items-center gap-2 text-gray-600 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
-                        <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full">
-                            <Mail size={24} />
-                        </div>
-                        <span className="text-sm font-medium">Email</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/bhashkar-kumar-351a77257/" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-2 text-gray-600 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
-                        <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full">
-                            <Linkedin size={24} />
-                        </div>
-                        <span className="text-sm font-medium">LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/BhashkarKumar2/" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-2 text-gray-600 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
-                        <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full">
-                            <Github size={24} />
-                        </div>
-                        <span className="text-sm font-medium">GitHub</span>
-                    </a>
-                </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={`mailto:${profile.email}`}
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
+            >
+              <Mail size={16} /> {profile.email}
+            </a>
+            <a
+              href={`tel:${profile.phone.replace(/\s/g, '')}`}
+              className="glass-chip inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+            >
+              <Phone size={16} /> {profile.phone}
+            </a>
+          </div>
 
-                <div className="text-gray-400 dark:text-gray-600 text-sm">
-                    © 2026 Bhashkar Kumar. Built with Meta style.
-                </div>
-            </div>
-        </section>
-    );
+          <div className="mt-8 flex items-center justify-center gap-3">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.label}
+                className="glass-chip flex h-10 w-10 items-center justify-center rounded-full text-ink-soft transition-all hover:-translate-y-0.5 hover:text-ink"
+              >
+                <s.icon size={18} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+
+      <div className="mt-8 flex flex-wrap items-center justify-between gap-3 text-xs text-ink-faint">
+        <p>© {new Date().getFullYear()} Bhashkar Kumar. All rights reserved.</p>
+        <a
+          href={profile.resume}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1 transition-colors hover:text-ink"
+        >
+          Résumé <ArrowUpRight size={13} />
+        </a>
+      </div>
+    </footer>
+  );
 };
 
 export default Contact;

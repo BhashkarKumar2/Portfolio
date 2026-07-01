@@ -1,33 +1,38 @@
-import React from 'react';
+import { GraduationCap } from 'lucide-react';
+import Reveal from './Reveal';
+import { education } from '../data/portfolio';
 
 const Education = () => {
-    return (
-        <section id="education" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
-            <div className="max-w-4xl mx-auto px-6 sm:px-8">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Education</h2>
-                <div className="space-y-6">
-                    <div className="meta-card">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">Delhi Technological University</h3>
-                        <p className="text-gray-600 dark:text-gray-400">B.Tech in Computer Engineering</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-500">2022 – 2026</p>
-                        <p className="mt-2 font-semibold text-primary-600 dark:text-primary-400">CGPA: 7.89/10</p>
-                    </div>
-                    <div className="meta-card">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">S M Arya Public School</h3>
-                        <p className="text-gray-600 dark:text-gray-400">CBSE (Class XII)</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-500">2022</p>
-                        <p className="mt-2 font-semibold text-gray-900 dark:text-white">Percentage: 96.2%</p>
-                    </div>
-                    <div className="meta-card">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">St. Therese’s School</h3>
-                        <p className="text-gray-600 dark:text-gray-400">ICSE (Class X)</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-500">2020</p>
-                        <p className="mt-2 font-semibold text-gray-900 dark:text-white">Percentage: 92.6%</p>
-                    </div>
+  return (
+    <section id="education" className="section">
+      <Reveal>
+        <p className="eyebrow">06 — Education</p>
+        <h2 className="heading">Academics</h2>
+      </Reveal>
+
+      <div className="mt-10 space-y-4">
+        {education.map((e, i) => (
+          <Reveal key={e.school} delay={i * 0.05}>
+            <div className="glass glass-hover flex flex-wrap items-center justify-between gap-3 rounded-2xl p-5 sm:p-6">
+              <div className="flex items-start gap-4">
+                <span className="glass-chip mt-0.5 flex h-10 w-10 flex-none items-center justify-center rounded-xl text-accent">
+                  <GraduationCap size={19} />
+                </span>
+                <div>
+                  <h3 className="font-semibold text-ink">{e.school}</h3>
+                  <p className="mt-0.5 text-sm text-ink-soft">{e.detail}</p>
                 </div>
+              </div>
+              <div className="pl-14 text-sm text-ink-faint sm:pl-0 sm:text-right">
+                <p className="font-mono">{e.period}</p>
+                <p className="mt-0.5">{e.place}</p>
+              </div>
             </div>
-        </section>
-    );
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Education;

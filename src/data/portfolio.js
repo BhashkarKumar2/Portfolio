@@ -1,166 +1,155 @@
+// Central content source — mirrors the resume (Agentic_Resume.pdf).
 
-import { Rocket, Code, Briefcase, FolderGit2, Flag, Zap, Globe, Github, Linkedin, Mail, MapPin, Cpu } from 'lucide-react';
-
-export const portfolioData = {
-    hero: {
-        name: "Bhashkar Kumar",
-        title: "Software Engineer | Full Stack Developer",
-        location: "New Delhi, India",
-        status: "Available for Work",
-        linkedin: "https://www.linkedin.com/in/bhashkar-kumar-351a77257/",
-        connections: "500+ Connections",
-        bio: "Passionate former SDE Intern at **Expedia Group**. Expert in building scalable web applications with **React, Spring Boot, and AWS**. Top-rated competitive programmer (LeetCode 600+, Codeforces 1200+).",
-        resumeLink: "/resume.pdf",
-        contactLink: "#contact"
-    },
-
-    about: {
-        title: "About Me",
-        mission: "My journey began in 2020 with custom Tumblr themes, leading me down the rabbit hole of full-stack development. Today, I build enterprise-grade software for **startups, agencies, and large corporations**.",
-        currentRole: "I currently drive engineering efforts at **Expedia Group**, focusing on accessible and inclusive digital products.",
-        location: "Bengaluru, India",
-        status: "Open to Work",
-        techStack: ['Java', 'Spring Boot', 'React.js', 'AWS', 'Docker', 'PostgreSQL', 'Redis', 'Kafka']
-    },
-
-    experience: [
-        {
-            company: "Expedia Group",
-            role: "Software Development Engineer Intern",
-            period: "June 2023 – July 2023",
-            description: [
-                "Developed and deployed robust RESTful APIs using Java and Spring Boot to query large datasets directly from AWS S3, projected to improve data retrieval efficiency by 40%.",
-                "Collaborated with Data Engineering teams to design S3 data schemas, and partnered with Frontend engineers to ensure seamless integration.",
-                "Followed agile practices, participating in daily stand-ups and code reviews to maintain high software quality standards."
-            ],
-            certificate: "https://drive.google.com/file/d/19Vzoy1T4bRWyKt1liBKukqM1AfJIzVCo/view?usp=sharing"
-        }
-    ],
-
-    projects: [
-        {
-            title: 'ChefHub',
-            description: 'AI-powered chef booking platform with personalized recommendations. Increased booking precision by 30% and handled 2,000+ searches/month.',
-            tech: ['React', 'MongoDB', 'Express', 'Node.js'],
-            links: { demo: 'https://chefhub-poou.vercel.app/', github: 'https://github.com/BhashkarKumar2/Chefhub' },
-            image: "/projects/chefhub.png"
-        },
-        {
-            title: 'JustUs',
-            description: 'Real-time chat application with media sharing and optimistic UI updates. Achieved <1s latency and 99% delivery success.',
-            tech: ['React', 'Spring Boot', 'WebSocket', 'Redis'],
-            links: { demo: 'https://just-us-liard.vercel.app/', github: 'https://github.com/BhashkarKumar2/JustUs' },
-            image: "/projects/justus.png"
-        },
-        {
-            title: 'Image Classifier',
-            description: 'Deep Learning model classifying handwritten digits (MNIST) and Dog/Cat images with 95%+ accuracy using Hybrid FCN + CNN.',
-            tech: ['Python', 'PyTorch', 'Deep Learning'],
-            links: { demo: '/image-classifier', github: 'https://github.com/BhashkarKumar2/image-classifier' },
-            image: "/projects/classifier.png"
-        }
-    ],
-
-    skills: {
-        "Languages": ["C++", "Python", "JavaScript", "Java"],
-        "Frameworks": ["React.js", "Express.js", "Node.js", "Spring Boot", "NumPy", "Pandas", "PyTorch"],
-        "Tools": ["Git", "GitHub", "AWS", "Google Colab", "MongoDB", "SQL", "VS Code", "IntelliJ"],
-        "Core": ["Data Structures & Algorithms", "OOP", "DBMS", "OS", "Deep Learning", "Machine Learning"]
-    },
-
-    education: {
-        degree: "B.Tech in Computer Engineering",
-        institution: "Delhi Technological University",
-        period: "2022-2026",
-        cgpa: "7.89",
-        achievements: [
-            "Resolved 600+ LeetCode Problems",
-            "1000+ Rating on Chess.com"
-        ]
-    },
-
-    contact: {
-        email: "bhashkarkumar_co22a3_47@dtu.ac.in",
-        phone: "+91 8188946300",
-        linkedin: "https://linkedin.com/in/bhashkarkumar",
-        github: "https://github.com/bhashkarkumar"
-    }
+export const profile = {
+  name: "Bhashkar Kumar",
+  role: "Software Engineer",
+  tagline: "Full-Stack Developer & Agentic AI Builder",
+  location: "New Delhi, India",
+  status: "Open to opportunities",
+  email: "bhashkarkumar2063@gmail.com",
+  phone: "+91 8188946300",
+  resume: "/resume.pdf",
+  intro:
+    "I build scalable web applications and agentic AI systems. Former SDE Intern at Expedia Group, final-year Computer Engineering student at DTU, and a competitive programmer (LeetCode Knight, 1892).",
+  about:
+    "I'm a final-year B.Tech Computer Engineering student at Delhi Technological University who enjoys turning hard problems into clean, reliable software. My work spans production backends in Java/Spring Boot, full-stack products with React and Node.js, and modular agent runtimes built on LangGraph and LangChain. I care about correctness, thoughtful architecture, and shipping things that hold up under real load.",
+  socials: {
+    github: "https://github.com/BhashkarKumar2",
+    linkedin: "https://www.linkedin.com/in/bhashkar-kumar-351a77257/",
+    leetcode: "https://leetcode.com/u/Bhashkar_Kumar/",
+    codeforces: "https://codeforces.com/profile/bhashkarkumar2063/",
+  },
 };
 
-// Level Map Configuration (for GameMap)
-export const levelData = [
-    {
-        id: "about-level",
-        level: 1,
-        title: "Profile",
-        description: "Software Engineering Student",
-        icon: Rocket,
-        alignment: "left",
-        content: "Final year B.Tech Computer Engineering student at Delhi Technological University (2022-2026). Passionate about full-stack development, AI/ML, and building robust, scalable applications."
+export const experience = [
+  {
+    company: "Expedia Group",
+    role: "Software Development Engineering Intern",
+    period: "Jun 2025 – Jul 2025",
+    location: "Gurugram, India",
+    certificate:
+      "https://drive.google.com/file/d/19Vzoy1T4bRWyKt1liBKukqM1AfJIzVCo/view?usp=sharing",
+    points: [
+      "Developed and deployed robust RESTful APIs using Java and Spring Boot to query large datasets directly from AWS S3, projected to improve data retrieval efficiency by 40%.",
+      "Collaborated with Data Engineering teams to design optimized S3 data schemas ensuring scalability for 10M+ records, and partnered with frontend engineers for seamless UI integration.",
+      "Followed agile practices and contributed to code reviews that reduced post-deployment bugs by 30%, ensuring consistent software quality.",
+    ],
+  },
+];
+
+export const projects = [
+  {
+    title: "Agentic Ticket Resolution System",
+    blurb:
+      "A modular agent runtime for enterprise ticket resolution with request-isolated execution and a self-repairing inference pipeline.",
+    tech: ["Python", "FastAPI", "LangGraph", "LangChain", "DeepSeek"],
+    image: null,
+    points: [
+      "Architected a modular agent runtime separating orchestration, domain skills, tool semantics, and safety policies, with progressive context loading across 23 enterprise tools.",
+      "Built request-isolated execution using LangGraph memory, virtual filesystems, middleware-managed scratchpads, scoped caches, failure logs, and lifecycle cleanup.",
+      "Designed a two-stage inference pipeline: unconstrained tool-driven reasoning followed by function-calling schema repair, deterministic validation, and failure recovery.",
+    ],
+    links: {},
+    featured: true,
+  },
+  {
+    title: "ChefHub",
+    blurb:
+      "An AI-powered chef booking platform with a Gemini agent that orchestrates a 6-stage workflow from intent to ranked bookings.",
+    tech: ["React", "Node.js", "MongoDB", "Gemini", "Langfuse"],
+    image: "/projects/chefhub.png",
+    points: [
+      "Engineered a Gemini-powered booking agent running a 6-stage workflow — intent extraction, chef search, availability, pricing, menu generation, and draft creation — returning up to 3 ranked chefs.",
+      "Implemented 180-day preference memory (capped at 30 notes) and a 4-step human approval gate covering chef, booking, menu, and price before draft creation.",
+      "Productionized 10 AI endpoints with a 4-model Gemini fallback chain, prompt-injection detection, PII redaction, schema validation, and Langfuse/OpenTelemetry tracing.",
+    ],
+    links: {
+      demo: "https://chefhub-ochre.vercel.app/",
+      github: "https://github.com/BhashkarKumar2/Chefhub",
     },
-    {
-        id: "experience-level",
-        level: 2,
-        title: "Expedia Group",
-        description: "SDE Intern",
-        icon: Flag,
-        alignment: "right",
-        status: "active",
-        type: "experience" // special handler
+    featured: true,
+  },
+  {
+    title: "JustUs",
+    blurb:
+      "A real-time, end-to-end-encrypted chat app with WebRTC calling and built-in Gemini group intelligence.",
+    tech: ["React", "Node.js", "Socket.io", "Gemini"],
+    image: "/projects/justus.png",
+    points: [
+      "Built 25 Socket.io handlers for one-to-one and group chat across 7 message types, with sync, reactions, and WebRTC; added Curve25519 / XSalsa20-Poly1305 E2EE and 30-msg/min limits.",
+      "Added Gemini group AI for summaries (200 messages) and Q&A/actions (100-message context), plus 4-tier translation backed by a 1,000-entry cache.",
+    ],
+    links: {
+      demo: "https://just-us-liard.vercel.app/",
+      github: "https://github.com/BhashkarKumar2/JustUs",
     },
-    {
-        id: "projects-level-1",
-        level: 3,
-        title: "ChefHub",
-        description: "Full-Stack Booking Platform",
-        icon: FolderGit2,
-        alignment: "left",
-        tech: ["React", "Spring Boot"],
-        list: [
-            "Built a platform supporting 500+ active users with real-time location search.",
-            "Enhanced booking precision by 30% using advanced filtering logic.",
-            "Integrated 3+ third-party APIs for geocoding and secure payments."
-        ]
-    },
-    {
-        id: "projects-level-2",
-        level: 4,
-        title: "JustUs",
-        description: "Real-time Chat Application",
-        icon: Zap,
-        alignment: "right",
-        tech: ["Node.js", "WebSocket"],
-        list: [
-            "Implemented real-time messaging with WebSockets and optimistic updates.",
-            "Developed custom components for authenticated media sharing."
-        ]
-    },
-    {
-        id: "skills-level",
-        level: 5,
-        title: "Technical Arsenal",
-        description: "Skills & Technologies",
-        icon: Code,
-        alignment: "left",
-        type: "skills" // special handler
-    },
-    {
-        id: "education-level",
-        level: 6,
-        title: "Milestones",
-        description: "Education & Achievements",
-        icon: Briefcase,
-        alignment: "right",
-        type: "education" // special handler
-    },
-    {
-        id: "contact-level",
-        level: 7,
-        title: "Contact",
-        description: "Get in Touch",
-        icon: Mail,
-        alignment: "left",
-        status: "completed",
-        type: "contact" // special handler
-    }
+    featured: true,
+  },
+];
+
+export const skills = [
+  { group: "Languages", items: ["C++", "Python", "Java", "JavaScript"] },
+  {
+    group: "Frameworks & Libraries",
+    items: ["React.js", "Node.js", "Express.js", "Spring Boot", "NumPy"],
+  },
+  {
+    group: "Developer & AI Tools",
+    items: [
+      "Git",
+      "LangChain",
+      "Prompt Engineering",
+      "VS Code",
+      "IntelliJ",
+      "Claude",
+      "Codex",
+      "GitHub Copilot",
+    ],
+  },
+  {
+    group: "Coursework",
+    items: [
+      "Data Structures",
+      "OOP",
+      "DBMS",
+      "Operating Systems",
+      "Computer Networks",
+      "Machine Learning",
+      "Deep Learning",
+    ],
+  },
+];
+
+export const achievements = [
+  {
+    title: "LeetCode Knight",
+    detail: "Rating of 1892 — top competitive tier.",
+    href: "https://leetcode.com/u/Bhashkar_Kumar/",
+  },
+  {
+    title: "Codeforces",
+    detail: "1200+ rating across rated contests.",
+    href: "https://codeforces.com/profile/bhashkarkumar2063/",
+  },
+];
+
+export const education = [
+  {
+    school: "Delhi Technological University",
+    detail: "B.Tech in Computer Engineering · CGPA 8.02/10",
+    period: "2022 – 2026",
+    place: "New Delhi, India",
+  },
+  {
+    school: "S M Arya Public School",
+    detail: "CBSE (Class XII) · 96.2%",
+    period: "2022",
+    place: "New Delhi, India",
+  },
+  {
+    school: "St. Therese's School",
+    detail: "ICSE (Class X) · 92.6%",
+    period: "2020",
+    place: "Kushinagar, India",
+  },
 ];

@@ -4,34 +4,35 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        display: ['Segoe UI', 'Helvetica Neue', 'sans-serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       colors: {
-        primary: {
-          50: '#e7f3ff',
-          100: '#dbeafe',
-          500: '#1877F2', // Meta/Facebook Blue
-          600: '#166fe5',
-          700: '#0668E1',
+        ink: {
+          DEFAULT: '#0a0a0a',
+          soft: '#404040',
+          faint: '#737373',
         },
-        secondary: '#42b72a', // Green accent
-        background: '#F0F2F5', // Light grery background
-        surface: '#FFFFFF', // White cards
-        text: {
-          primary: '#050505',
-          secondary: '#65676B',
-        }
+        accent: {
+          DEFAULT: '#4f46e5',
+          soft: '#eef2ff',
+        },
       },
-      boxShadow: {
-        'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'card': '0 1px 2px rgba(0, 0, 0, 0.2)',
-      }
+      maxWidth: {
+        content: '64rem',
+      },
+      keyframes: {
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(12px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        'fade-up': 'fade-up 0.6s ease-out both',
+      },
     },
   },
   plugins: [],

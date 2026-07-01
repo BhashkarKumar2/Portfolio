@@ -1,68 +1,104 @@
-import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
-import { portfolioData } from '../data/portfolio';
+import { Github, ArrowUpRight, Cpu } from 'lucide-react';
+import Reveal from './Reveal';
+import { projects } from '../data/portfolio';
+
+const ProjectCard = ({ p, index }) => {
+  const flip = index % 2 === 1;
+  return (
+    <article className="glass glass-hover overflow-hidden rounded-3xl">
+      <div className="grid gap-0 lg:grid-cols-2">
+        {/* Visual */}
+        <div
+          className={`relative min-h-[220px] overflow-hidden lg:min-h-[340px] ${
+            flip ? 'lg:order-2' : ''
+          }`}
+        >
+          {p.image ? (
+            <img
+              src={p.image}
+              alt={p.title}
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-indigo-500/25 via-fuchsia-400/20 to-sky-400/25">
+              <Cpu className="text-white/70" size={64} strokeWidth={1.2} />
+            </div>
+          )}
+        </div>
+
+        {/* Content */}
+        <div className="flex flex-col p-7 sm:p-9">
+          <h3 className="text-2xl font-semibold text-ink">{p.title}</h3>
+          <p className="mt-3 text-sm leading-relaxed text-ink-soft">{p.blurb}</p>
+
+          <ul className="mt-4 space-y-2">
+            {p.points.map((pt, i) => (
+              <li key={i} className="flex gap-2.5 text-sm leading-relaxed text-ink-soft">
+                <span className="mt-2 h-1 w-1 flex-none rounded-full bg-accent/70" />
+                {pt}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {p.tech.map((t) => (
+              <span
+                key={t}
+                className="glass-chip rounded-full px-3 py-1 font-mono text-xs text-ink-soft"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+
+          {(p.links.demo || p.links.github) && (
+            <div className="mt-6 flex items-center gap-3">
+              {p.links.demo && (
+                <a
+                  href={p.links.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
+                >
+                  Live demo <ArrowUpRight size={15} />
+                </a>
+              )}
+              {p.links.github && (
+                <a
+                  href={p.links.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="glass-chip inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+                >
+                  <Github size={15} /> Code
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+};
 
 const Projects = () => {
-    const { projects } = portfolioData;
+  return (
+    <section id="projects" className="section">
+      <Reveal>
+        <p className="eyebrow">03 — Work</p>
+        <h2 className="heading">Selected projects</h2>
+      </Reveal>
 
-    return (
-        <section id="projects" className="py-20 bg-background dark:bg-gray-900 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Featured Projects</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
-                        <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-card overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-200 flex flex-col">
-                            {/* Project Image */}
-                            <div className="h-48 overflow-hidden relative group">
-                                {project.links.demo !== '#' ? (
-                                    <a href={project.links.demo} target="_blank" rel="noreferrer" className="block w-full h-full cursor-pointer">
-                                        <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-                                    </a>
-                                ) : (
-                                    <>
-                                        <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-                                    </>
-                                )}
-                            </div>
-
-                            {/* Content */}
-                            <div className="p-5 flex-1 flex flex-col">
-                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed flex-grow">
-                                    {project.description}
-                                </p>
-
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.tech.map(t => (
-                                        <span key={t} className="text-xs font-medium text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/30 px-2 py-1 rounded-md">
-                                            {t}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                <div className="flex justify-between items-center pt-4 border-t border-gray-100 dark:border-gray-700">
-                                    <div className="flex gap-4">
-                                        <a href={project.links.github} target="_blank" rel="noreferrer" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white flex items-center gap-1 text-sm font-medium transition-colors">
-                                            <Github size={18} />
-                                            <span>Code</span>
-                                        </a>
-                                        {project.links.demo !== '#' && (
-                                            <a href={project.links.demo} target="_blank" rel="noreferrer" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white flex items-center gap-1 text-sm font-medium transition-colors">
-                                                <ExternalLink size={18} />
-                                                <span>Live</span>
-                                            </a>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+      <div className="mt-10 space-y-8">
+        {projects.map((p, i) => (
+          <Reveal key={p.title} delay={i * 0.05}>
+            <ProjectCard p={p} index={i} />
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Projects;

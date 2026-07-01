@@ -1,94 +1,101 @@
-import React from 'react';
-import { MapPin, Mail, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { portfolioData } from '../data/portfolio';
+import { ArrowDown, ArrowUpRight, MapPin } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { SiLeetcode, SiCodeforces } from 'react-icons/si';
+import { profile } from '../data/portfolio';
+
+const socials = [
+  { icon: FaGithub, href: profile.socials.github, label: 'GitHub' },
+  { icon: FaLinkedin, href: profile.socials.linkedin, label: 'LinkedIn' },
+  { icon: SiLeetcode, href: profile.socials.leetcode, label: 'LeetCode' },
+  { icon: SiCodeforces, href: profile.socials.codeforces, label: 'Codeforces' },
+];
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+};
+const item = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+};
 
 const Hero = () => {
-    const { hero } = portfolioData;
+  return (
+    <section id="top" className="relative">
+      <div className="mx-auto flex min-h-screen w-full max-w-content flex-col justify-center px-6 pb-16 pt-32">
+        <motion.div variants={container} initial="hidden" animate="show">
+          <motion.div
+            variants={item}
+            className="glass-chip mb-6 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs text-ink-soft"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            {profile.status}
+          </motion.div>
 
-    return (
-        <section className="bg-white dark:bg-gray-900 pb-10 transition-colors duration-300">
-            {/* Clean Cover - Solid Color */}
-            <div className="h-64 sm:h-80 relative overflow-hidden bg-gray-200 dark:bg-gray-800 transition-colors duration-300">
-                <div className="absolute inset-0 bg-grid-slate-200/50 dark:bg-grid-slate-800/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"></div>
-            </div>
+          <motion.h1
+            variants={item}
+            className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl"
+          >
+            {profile.name}
+          </motion.h1>
 
-            <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
-                <div className="relative -mt-24 sm:-mt-32 sm:flex sm:items-end sm:gap-8">
-                    {/* Profile Picture with premium ring */}
-                    <div className="relative group">
-                        <div className="w-40 h-40 sm:w-48 sm:h-48 bg-white dark:bg-gray-800 p-1.5 rounded-full shadow-2xl ring-4 ring-white/50 dark:ring-gray-700/50 overflow-hidden transition-all duration-300">
-                            <img
-                                src="/linkedin_profile.png"
-                                alt={hero.name}
-                                className="w-full h-full object-cover rounded-full transition-transform duration-500 group-hover:scale-105"
-                            />
-                        </div>
-                        {/* Status Indicator */}
-                        <div className="absolute bottom-4 right-4 w-6 h-6 bg-green-500 border-4 border-white dark:border-gray-800 rounded-full shadow-sm animate-pulse" title={hero.status}></div>
-                    </div>
+          <motion.p variants={item} className="mt-4 text-lg font-medium text-ink-soft sm:text-xl">
+            {profile.role} <span className="text-ink-faint/50">/</span>{' '}
+            <span className="text-ink">{profile.tagline}</span>
+          </motion.p>
 
-                    {/* Name and Basic Info */}
-                    <div className="mt-6 sm:mt-0 sm:pb-2 flex-1">
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight font-display"
-                        >
-                            {hero.name}
-                        </motion.h1>
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="text-xl text-gray-600 dark:text-gray-300 font-medium mt-1 font-mono"
-                        >
-                            {hero.title}
-                        </motion.p>
+          <motion.p
+            variants={item}
+            className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft"
+          >
+            {profile.intro}
+          </motion.p>
 
-                        <div className="flex flex-wrap items-center gap-4 mt-3 text-sm text-gray-500 dark:text-gray-400 font-medium">
-                            <div className="flex items-center gap-1.5">
-                                <MapPin size={16} className="text-gray-400 dark:text-gray-500" />
-                                <span>{hero.location}</span>
-                            </div>
-                            <span className="hidden sm:inline text-gray-300 dark:text-gray-600">•</span>
-                            <a href={hero.linkedin} target="_blank" rel="noreferrer" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 hover:underline">
-                                {hero.connections}
-                            </a>
-                        </div>
-                    </div>
+          <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
+            >
+              View my work <ArrowDown size={16} />
+            </a>
+            <a
+              href={profile.resume}
+              target="_blank"
+              rel="noreferrer"
+              className="glass glass-hover inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-ink"
+            >
+              Download résumé <ArrowUpRight size={16} />
+            </a>
+          </motion.div>
 
-                    {/* Call to Action Buttons */}
-                    <div className="mt-8 sm:mt-0 flex flex-col sm:flex-row gap-3">
-                        <a href={hero.contactLink} className="flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold shadow-lg shadow-primary-500/30 transition-all hover:scale-105 active:scale-95">
-                            <Mail size={18} />
-                            <span>Contact Me</span>
-                        </a>
-                        <a href={hero.resumeLink} className="flex items-center justify-center gap-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 px-6 py-2.5 rounded-lg font-semibold shadow-sm transition-all hover:border-gray-400">
-                            <FileText size={18} />
-                            <span>Resume</span>
-                        </a>
-                    </div>
-                </div>
-
-                {/* Quick Bio / Featured Highlight */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="mt-10 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-700/50 backdrop-blur-sm"
+          <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-5">
+            <span className="inline-flex items-center gap-1.5 text-sm text-ink-faint">
+              <MapPin size={15} /> {profile.location}
+            </span>
+            <span className="hidden h-4 w-px bg-ink/10 sm:block" />
+            <div className="flex items-center gap-3">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={s.label}
+                  className="glass-chip flex h-9 w-9 items-center justify-center rounded-full text-ink-soft transition-all hover:-translate-y-0.5 hover:text-ink"
                 >
-                    {/* Render markdown-like bold text */}
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
-                        {hero.bio.split('**').map((part, index) =>
-                            index % 2 === 1 ? <span key={index} className="font-semibold text-gray-900 dark:text-white">{part}</span> : part
-                        )}
-                    </p>
-                </motion.div>
+                  <s.icon size={17} />
+                </a>
+              ))}
             </div>
-        </section>
-    );
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
 };
 
 export default Hero;
-

@@ -1,16 +1,30 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import ImageClassifier from './pages/ImageClassifier';
+import Backdrop from './components/Backdrop';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Achievements from './components/Achievements';
+import Education from './components/Education';
+import Contact from './components/Contact';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/image-classifier" element={<ImageClassifier />} />
-      </Routes>
-    </Router>
+    <div className="relative min-h-screen text-ink antialiased">
+      <Backdrop />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Achievements />
+        <Education />
+      </main>
+      <Contact />
+    </div>
   );
 }
 

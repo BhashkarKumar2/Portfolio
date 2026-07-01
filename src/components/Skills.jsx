@@ -1,30 +1,37 @@
-import React from 'react';
-import { portfolioData } from '../data/portfolio';
+import Reveal from './Reveal';
+import { skills } from '../data/portfolio';
 
 const Skills = () => {
-    const { skills } = portfolioData;
+  return (
+    <section id="skills" className="section">
+      <Reveal>
+        <p className="eyebrow">04 — Skills</p>
+        <h2 className="heading">Tools I work with</h2>
+      </Reveal>
 
-    return (
-        <section id="skills" className="py-20 bg-background dark:bg-gray-900 transition-colors duration-300">
-            <div className="max-w-4xl mx-auto px-6 sm:px-8">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Technical Skills</h2>
-                <div className="space-y-8">
-                    {Object.entries(skills).map(([category, items]) => (
-                        <div key={category}>
-                            <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3">{category}</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {items.map(skill => (
-                                    <span key={skill} className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium shadow-sm transition-colors">
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+      <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        {skills.map((cat, i) => (
+          <Reveal key={cat.group} delay={i * 0.06}>
+            <div className="glass glass-hover h-full rounded-2xl p-6 sm:p-7">
+              <h3 className="font-mono text-xs uppercase tracking-widest text-ink-faint">
+                {cat.group}
+              </h3>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {cat.items.map((s) => (
+                  <span
+                    key={s}
+                    className="glass-chip rounded-full px-3 py-1.5 text-sm text-ink-soft transition-colors hover:text-ink"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
             </div>
-        </section>
-    );
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Skills;
